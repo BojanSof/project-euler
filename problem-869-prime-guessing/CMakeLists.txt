@@ -1,0 +1,1 @@
+add_executable(problem-869-prime-guessing main.cpp)

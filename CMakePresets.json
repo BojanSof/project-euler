@@ -1,0 +1,109 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 18,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "linux-base-x64",
+            "hidden": true,
+            "description": "Project Euler Linux",
+            "generator": "Ninja Multi-Config",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Linux"
+            }
+        },
+        {
+            "name": "linux-gcc-x64",
+            "inherits": "linux-base-x64",
+            "description": "Project Euler Linux GCC",
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "gcc",
+                "CMAKE_CXX_COMPILER": "g++"
+            }
+        },
+        {
+            "name": "linux-clang-x64",
+            "inherits": "linux-base-x64",
+            "description": "Project Euler Linux Clang",
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "clang",
+                "CMAKE_CXX_COMPILER": "clang"
+            }
+        },
+        {
+            "name": "windows-base-x64",
+            "hidden": true,
+            "description": "Project Euler Windows",
+            "generator": "Ninja Multi-Config",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "architecture": {
+                "value": "x64",
+                "strategy": "external"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-msvc-x64",
+            "inherits": "windows-base-x64",
+            "description": "Project Euler Windows MSVC",
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "cl.exe",
+                "CMAKE_CXX_COMPILER": "cl.exe"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "debug-linux-gcc-x64",
+            "displayName": "Debug",
+            "configurePreset": "linux-gcc-x64",
+            "inheritConfigureEnvironment": true,
+            "configuration": "Debug"
+        },
+        {
+            "name": "release-linux-gcc-x64",
+            "displayName": "Release",
+            "configurePreset": "linux-gcc-x64",
+            "inheritConfigureEnvironment": true,
+            "configuration": "Release"
+        },
+        {
+            "name": "debug-linux-clang-x64",
+            "displayName": "Debug",
+            "configurePreset": "linux-clang-x64",
+            "inheritConfigureEnvironment": true,
+            "configuration": "Debug"
+        },
+        {
+            "name": "release-linux-clang-x64",
+            "displayName": "Release",
+            "configurePreset": "linux-clang-x64",
+            "inheritConfigureEnvironment": true,
+            "configuration": "Release"
+        },
+        {
+            "name": "debug-windows-msvc-x64",
+            "displayName": "Debug",
+            "configurePreset": "windows-msvc-x64",
+            "inheritConfigureEnvironment": true,
+            "configuration": "Debug"
+        },
+        {
+            "name": "release-windows-msvc-x64",
+            "displayName": "Release",
+            "configurePreset": "windows-msvc-x64",
+            "inheritConfigureEnvironment": true,
+            "configuration": "Release"
+        }
+    ]
+}
