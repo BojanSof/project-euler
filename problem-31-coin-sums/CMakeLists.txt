@@ -1,0 +1,1 @@
+add_executable(problem-31-coin-sums main.cpp)

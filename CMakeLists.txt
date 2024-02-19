@@ -17,5 +17,6 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY  ${PROJECT_BINARY_DIR}/bin)
 
 set(CMAKE_CXX_STANDARD 20)
 
+add_subdirectory(problem-31-coin-sums)
 add_subdirectory(problem-182-rsa-encryption)
 add_subdirectory(problem-869-prime-guessing)
