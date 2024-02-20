@@ -1,0 +1,1 @@
+add_executable(problem-1-multiples-of-3-and-5 main.cpp)
