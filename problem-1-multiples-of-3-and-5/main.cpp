@@ -1,9 +1,4 @@
-#include <algorithm>
-#include <cmath>
-#include <cstddef>
-#include <cstdint>
 #include <iostream>
-#include <vector>
 
 unsigned int multiples3and5(const unsigned int limit)
 {
