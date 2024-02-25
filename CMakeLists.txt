@@ -19,6 +19,7 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_subdirectory(problem-1-multiples-of-3-and-5)
 add_subdirectory(problem-2-even-fibonacci-numbers)
+add_subdirectory(problem-3-largest-prime-factor)
 add_subdirectory(problem-31-coin-sums)
 add_subdirectory(problem-182-rsa-encryption)
 add_subdirectory(problem-869-prime-guessing)
